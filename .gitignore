@@ -5,4 +5,4 @@ Session.vim
 plugin/
 .init.vim-rplugin~
 debug.init.vim
-lua/customBeforeInit.lua
+lua/beforeInit.lua
