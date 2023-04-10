@@ -1,0 +1,8 @@
+.beforeinit.vim
+.afterinit.vim
+.netrwhist
+Session.vim
+plugin/
+.init.vim-rplugin~
+debug.init.vim
+lua/customBeforeInit.lua
