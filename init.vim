@@ -91,7 +91,7 @@ set scrollback=-1
 if !exists('g:vscode')
     " neomake settings
     let g:neomake_php_phpcs_args_standard = 'PSR12'
-    let g:neomake_php_enabled_makers = ['php', 'phpmd', 'phpcs', 'psalm']
+    let g:neomake_php_enabled_makers = ['php', 'phpmd', 'phpcs']
 endif
 " commentary mappings
 nmap <leader>/ gcc
