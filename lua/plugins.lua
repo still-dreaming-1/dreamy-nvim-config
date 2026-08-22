@@ -1,7 +1,7 @@
 local plugins = {
     'https://github.com/jlanzarotta/bufexplorer',
+    'https://github.com/terryma/vim-expand-region',
 --[[
-    use 'terryma/vim-expand-region'
     use 'qpkorr/vim-bufkill'
     use 'tpope/vim-repeat'
     use 'tpope/vim-commentary'
