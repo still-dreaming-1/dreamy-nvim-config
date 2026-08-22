@@ -1,21 +1,22 @@
+local vim_elhiv_src
+
+if vim.g.dreamy_developer then
+    vim_elhiv_src = 'git@github.com:still-dreaming-1/vim-elhiv.git'
+else
+    vim_elhiv_src = 'https://github.com/still-dreaming-1/vim-elhiv.git'
+end
+
 local plugins = {
     'https://github.com/jlanzarotta/bufexplorer',
     'https://github.com/terryma/vim-expand-region',
     'https://github.com/qpkorr/vim-bufkill',
     'https://github.com/tpope/vim-repeat',
     'https://github.com/tpope/vim-commentary',
+    {
+        src = vim_elhiv_src,
+        version = 'develop',
+    },
 --[[
-    if vim.g.dreamy_developer then
-        use {
-            'git@github.com:still-dreaming-1/vim-elhiv.git',
-            branch = 'develop',
-        }
-    else
-        use {
-            'still-dreaming-1/vim-elhiv',
-            branch = 'develop',
-        }
-    end
     if not vim.g.vscode then
         use 'neomake/neomake'
         use 'tpope/vim-fugitive'

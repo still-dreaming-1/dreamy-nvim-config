@@ -16,11 +16,7 @@ lua require('core')
 lua require('plugins')
 
 " This is how you enable elhiv.vim, which is needed by my plugins
-if g:dreamy_developer
-    source $HOME/.local/share/nvim/site/pack/packer/start/vim-elhiv.git/elhiv.vim
-else
-    source $HOME/.local/share/nvim/site/pack/packer/start/vim-elhiv/elhiv.vim
-endif
+runtime elhiv.vim
 if type(g:dreamy_log) == l_type#string()
     let g:l_log = L_file(g:dreamy_log)
 endif
