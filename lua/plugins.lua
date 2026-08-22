@@ -3,8 +3,8 @@ local plugins = {
     'https://github.com/terryma/vim-expand-region',
     'https://github.com/qpkorr/vim-bufkill',
     'https://github.com/tpope/vim-repeat',
+    'https://github.com/tpope/vim-commentary',
 --[[
-    use 'tpope/vim-commentary'
     if vim.g.dreamy_developer then
         use {
             'git@github.com:still-dreaming-1/vim-elhiv.git',
