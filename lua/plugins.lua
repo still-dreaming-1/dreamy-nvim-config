@@ -1,8 +1,8 @@
 local plugins = {
     'https://github.com/jlanzarotta/bufexplorer',
     'https://github.com/terryma/vim-expand-region',
+    'https://github.com/qpkorr/vim-bufkill',
 --[[
-    use 'qpkorr/vim-bufkill'
     use 'tpope/vim-repeat'
     use 'tpope/vim-commentary'
     if vim.g.dreamy_developer then
