@@ -1,9 +1,6 @@
--- packer commands:
--- :PackerSync - Perform `PackerUpdate` (clean, update, and install plugins) and then `PackerCompile`
--- :PackerClean - removed disabled or unused plugins
-return require 'packer'.startup(function(use)
-    use 'wbthomason/packer.nvim'
-    use 'jlanzarotta/bufexplorer'
+local plugins = {
+    'https://github.com/jlanzarotta/bufexplorer',
+--[[
     use 'terryma/vim-expand-region'
     use 'qpkorr/vim-bufkill'
     use 'tpope/vim-repeat'
@@ -64,4 +61,7 @@ return require 'packer'.startup(function(use)
             }
         end
     end
-end)
+]]
+}
+
+vim.pack.add(plugins)
