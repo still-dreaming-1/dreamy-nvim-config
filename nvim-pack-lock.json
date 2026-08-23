@@ -1,0 +1,72 @@
+{
+  "plugins": {
+    "bufexplorer": {
+      "rev": "947dc783e898b3e382ef215604f2cbf4f22b3fa6",
+      "src": "https://github.com/jlanzarotta/bufexplorer"
+    },
+    "fzf-lua": {
+      "rev": "05e44d38de0a79c11fba5f7bf8138791b1dbdd1e",
+      "src": "https://github.com/ibhagwan/fzf-lua"
+    },
+    "lh-vim-lib": {
+      "rev": "9435c1105d05f4cb7f18853050c428a895b1d672",
+      "src": "https://github.com/LucHermitte/lh-vim-lib"
+    },
+    "nvim-tree.lua": {
+      "rev": "b2aadda94b107480c48e548d6db51c6840b7b33c",
+      "src": "https://github.com/nvim-tree/nvim-tree.lua"
+    },
+    "nvim-treesitter": {
+      "rev": "e82ef6ae2c3eeb96c6916b29917f96bf630b2cdb",
+      "src": "https://github.com/nvim-treesitter/nvim-treesitter",
+      "version": "'main'"
+    },
+    "nvim-web-devicons": {
+      "rev": "2ae6958df7ced50baac5035cec0c15799eedfbf7",
+      "src": "https://github.com/nvim-tree/nvim-web-devicons"
+    },
+    "tokyonight.nvim": {
+      "rev": "545d72cde6400835d895160ecb5853874fd5156d",
+      "src": "https://github.com/folke/tokyonight.nvim",
+      "version": "4.0.0 - 5.0.0"
+    },
+    "vim-UT": {
+      "rev": "73e669f81a4b4f8b96abb4fbbf96f110c6c311f6",
+      "src": "https://github.com/LucHermitte/vim-UT"
+    },
+    "vim-bufkill": {
+      "rev": "3113181d0c1bfb8719f3ddcd2e2f35a8d763d1e5",
+      "src": "https://github.com/qpkorr/vim-bufkill"
+    },
+    "vim-commentary": {
+      "rev": "64a654ef4a20db1727938338310209b6a63f60c9",
+      "src": "https://github.com/tpope/vim-commentary"
+    },
+    "vim-elhiv": {
+      "rev": "a0fe26e28b037a58cd1b09eaf88517912877dbc8",
+      "src": "git@github.com:still-dreaming-1/vim-elhiv.git",
+      "version": "'develop'"
+    },
+    "vim-expand-region": {
+      "rev": "966513543de0ddc2d673b5528a056269e7917276",
+      "src": "https://github.com/terryma/vim-expand-region"
+    },
+    "vim-fugitive": {
+      "rev": "3b753cf8c6a4dcde6edee8827d464ba9b8c4a6f0",
+      "src": "https://github.com/tpope/vim-fugitive"
+    },
+    "vim-project-search": {
+      "rev": "78fa15e64c09de25c4df142e729cdd43591c9948",
+      "src": "git@github.com:still-dreaming-1/vim-project-search.git",
+      "version": "'develop'"
+    },
+    "vim-repeat": {
+      "rev": "65846025c15494983dafe5e3b46c8f88ab2e9635",
+      "src": "https://github.com/tpope/vim-repeat"
+    },
+    "vimagit": {
+      "rev": "2e27fa2cc81938424238bf73d7caca16d0344dbe",
+      "src": "https://github.com/jreybert/vimagit"
+    }
+  }
+}

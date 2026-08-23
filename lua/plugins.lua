@@ -69,10 +69,10 @@ local plugins = {
         src = 'https://github.com/nvim-treesitter/nvim-treesitter',
         version = 'main',
     },
-    -- {
-    --     src = 'https://github.com/folke/tokyonight.nvim',
-    --     version = vim.version.range('^4'),
-    -- },
+    {
+        src = 'https://github.com/folke/tokyonight.nvim',
+        version = vim.version.range('^4'),
+    },
     -- vim-project-search depends on vim-elhiv, so keep these in this order.
     {
         src = vim_elhiv_src,
@@ -86,10 +86,10 @@ local plugins = {
 
 vim.pack.add(plugins)
 
--- require('tokyonight').setup({
---     style = 'moon', -- 'storm', 'moon', 'night', or 'day'
--- })
--- vim.cmd.colorscheme('tokyonight')
+require('tokyonight').setup({
+    style = 'moon', -- 'storm', 'moon', 'night', or 'day'
+})
+vim.cmd.colorscheme('tokyonight')
 
 require('nvim-tree').setup()
 
