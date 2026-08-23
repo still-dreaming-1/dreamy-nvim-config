@@ -65,15 +65,15 @@ local plugins = {
         src = 'https://github.com/nvim-treesitter/nvim-treesitter',
         version = 'main',
     },
+    -- {
+    --     src = 'https://github.com/folke/tokyonight.nvim',
+    --     version = vim.version.range('^4'),
+    -- },
     {
         src = vim_elhiv_src,
         version = 'develop',
     },
 --[[
-    use {
-        'folke/tokyonight.nvim',
-        branch = 'main',
-    }
     if vim.g.dreamy_developer then
         use {
             'git@github.com:still-dreaming-1/vim-project-search.git',
@@ -97,6 +97,11 @@ local plugins = {
 }
 
 vim.pack.add(plugins)
+
+-- require('tokyonight').setup({
+--     style = 'moon', -- 'storm', 'moon', 'night', or 'day'
+-- })
+-- vim.cmd.colorscheme('tokyonight')
 
 require('nvim-tree').setup()
 
