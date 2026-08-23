@@ -44,22 +44,20 @@ vim.keymap.set( -- lua alternative to ":" (enter lua code instead of vimscript)
     ':lua '
 )
 
-if not vim.g.vscode then -- terminal doesn't work right in VS Code
-    -- use kk to return to normal mode from terminal buffer. This also fixes an issue where the cursor would jump to the bottom of the screen after
-    -- entering normal mode.
-    vim.keymap.set(
-        't',
-        'kk',
-        [[<C-\><C-n>]]
-    )
-    -- augroup below maps escape for entering normal mode, so this is how you would send the escape key to the terminal
-    -- instead of returning to normal mode:
-    vim.keymap.set(
-        't',
-        '<leader><esc>',
-        '<esc>'
-    )
-end
+-- use kk to return to normal mode from terminal buffer. This also fixes an issue where the cursor would jump to the bottom of the screen after
+-- entering normal mode.
+vim.keymap.set(
+    't',
+    'kk',
+    [[<C-\><C-n>]]
+)
+-- augroup below maps escape for entering normal mode, so this is how you would send the escape key to the terminal
+-- instead of returning to normal mode:
+vim.keymap.set(
+    't',
+    '<leader><esc>',
+    '<esc>'
+)
 -- pasting in visual mode will yank what you just pasted so it does overwritten by what was pasted over(breaks specifying register, but I don't use them)
 vim.keymap.set(
     'x',
@@ -75,62 +73,46 @@ vim.keymap.set(
         silent = true,
     }
 )
-if vim.g.vscode then
-    vim.keymap.set( -- show/focus source control/git view
-        'n',
-        '<leader>g',
-        [[<Cmd>call VSCodeNotify('workbench.view.scm')<CR>]]
-    )
-else
-    vim.keymap.set( -- vim-fugitive mappings for git
-        'n',
-        '<leader>ga',
-        '<Cmd>Git add -A<CR>'
-    )
-    vim.keymap.set( -- git status
-        'n',
-        '<leader>gs',
-        '<Cmd>Git<CR>/modified<CR>'
-    )
-    vim.keymap.set(
-        'n',
-        '<leader>gd',
-        '<Cmd>Gdiffsplit<CR>'
-    )
-    vim.keymap.set(
-        'n',
-        '<leader>gc',
-        '<Cmd>call DreamyGitCommit()<CR>'
-    )
-    vim.keymap.set(
-        'n',
-        '<leader>gp',
-        '<Cmd>Git push<CR>'
-    )
-    vim.keymap.set(
-        'n',
-        '<leader>gl',
-        '<Cmd>Git! log --decorate --stat --graph<CR>'
-    )
-    vim.keymap.set( -- vimagit
-        'n',
-        '<leader>gv',
-        '<Cmd>Magit<CR>'
-    )
-end
-if vim.g.vscode then
-    vim.keymap.set( -- show/focus terminal
-        'n',
-        '<leader>T',
-        [[<Cmd>call VSCodeNotify('terminal.focus')<CR>]]
-    )
-else
-    vim.keymap.set( -- open a terminal emulator
-        'n',
-        '<leader>T',
-        '<Cmd>te<CR>'
-    )
-end
+vim.keymap.set( -- vim-fugitive mappings for git
+    'n',
+    '<leader>ga',
+    '<Cmd>Git add -A<CR>'
+)
+vim.keymap.set( -- git status
+    'n',
+    '<leader>gs',
+    '<Cmd>Git<CR>/modified<CR>'
+)
+vim.keymap.set(
+    'n',
+    '<leader>gd',
+    '<Cmd>Gdiffsplit<CR>'
+)
+vim.keymap.set(
+    'n',
+    '<leader>gc',
+    '<Cmd>call DreamyGitCommit()<CR>'
+)
+vim.keymap.set(
+    'n',
+    '<leader>gp',
+    '<Cmd>Git push<CR>'
+)
+vim.keymap.set(
+    'n',
+    '<leader>gl',
+    '<Cmd>Git! log --decorate --stat --graph<CR>'
+)
+vim.keymap.set( -- vimagit
+    'n',
+    '<leader>gv',
+    '<Cmd>Magit<CR>'
+)
+vim.keymap.set( -- open a terminal emulator
+    'n',
+    '<leader>T',
+    '<Cmd>te<CR>'
+)
 vim.keymap.set(
     'n',
     '<leader>c',
@@ -152,32 +134,16 @@ vim.keymap.set(
     '<leader><leader>t',
     ':call PsalmTraceVarUnderCursor()<CR>'
 )
-if vim.g.vscode then
-    vim.keymap.set( -- show/focus the file explorer side panel
-        'n',
-        '<leader>t',
-        [[<Cmd>call VSCodeNotify('workbench.view.explorer')<CR>]]
-    )
-else
-    vim.keymap.set( -- toggle nvim-tree
-        'n',
-        '<leader>t',
-        '<Cmd>NvimTreeFindFileToggle<CR>'
-    )
-end
-if vim.g.vscode then
-    vim.keymap.set( -- close current editor file
-        'n',
-        '<leader>q',
-        [[<Cmd>call VSCodeNotify('workbench.action.closeActiveEditor')<CR>]]
-    )
-else
-    vim.keymap.set( -- quit
-        'n',
-        '<leader>q',
-        '<Cmd>q!<CR>'
-    )
-end
+vim.keymap.set( -- toggle nvim-tree
+    'n',
+    '<leader>t',
+    '<Cmd>NvimTreeFindFileToggle<CR>'
+)
+vim.keymap.set( -- quit
+    'n',
+    '<leader>q',
+    '<Cmd>q!<CR>'
+)
 vim.keymap.set( -- replays the last played macro 3 times
     'n',
     '<leader>@',
@@ -225,24 +191,9 @@ vim.keymap.set( -- use ) to move line down
     ')',
     'ddp'
 )
-if vim.g.vscode then
-    vim.keymap.set( -- use Cntrol+Tab to activate the bufexplorer plugin view of the open buffers and move down to the previously opened buffer
-        'n',
-        '<leader>;',
-        [[<Cmd>call VSCodeNotify('workbench.action.showAllEditorsByMostRecentlyUsed')<CR>]]
-    )
-else
-    vim.keymap.set( -- use Cntrol+Tab to activate the bufexplorer plugin view of the open buffers and move down to the previously opened buffer
-        'n',
-        '<leader>;',
-        '<leader>bej',
-        { remap = true }
-    )
-end
-if vim.g.vscode then
-    vim.keymap.set( -- user VS Code search and replace feature with word under cursor
-        'n',
-        '<leader>*',
-        [[<Cmd>call VSCodeNotify('workbench.action.findInFiles', { 'query': expand('<cword>')}))<CR>]]
-    )
-end
+vim.keymap.set( -- use Cntrol+Tab to activate the bufexplorer plugin view of the open buffers and move down to the previously opened buffer
+    'n',
+    '<leader>;',
+    '<leader>bej',
+    { remap = true }
+)

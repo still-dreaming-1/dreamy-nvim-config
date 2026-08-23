@@ -56,18 +56,14 @@ lua require('options')
 "    `\/__/  \/_/\/_/\/_/\/_/    \/___/  \/____/ \/__/ \/__/ \/_/\/_/\/_/\/___L\ \/___/ 
 "                                                                          /\____/      
 "                                                                          \_/__/
-if !exists('g:vscode')
-    " highlight the current line and column for a crosshair effect (looks bad
-    " in VS Code and is unncessary because of blinking cursor):
-    " hi CursorLine ctermbg=black
-    " set cursorline
-    " hi CursorColumn ctermbg=black
-    " set cursorcolumn
-    " tries to highlight the terminal cursor position (different from Vim cursor), but it's kind of buggy or something
-    " (terminal doesn't work in VS Code)
-    hi! TermCursor ctermfg=15 ctermbg=14
-    hi! TermCursorNC ctermfg=15 ctermbg=14
-endif
+" highlight the current line and column for a crosshair effect:
+" hi CursorLine ctermbg=black
+" set cursorline
+" hi CursorColumn ctermbg=black
+" set cursorcolumn
+" tries to highlight the terminal cursor position (different from Vim cursor), but it's kind of buggy or something
+hi! TermCursor ctermfg=15 ctermbg=14
+hi! TermCursorNC ctermfg=15 ctermbg=14
 " copy the indentation from the previous line (supposedly, but does not always work).
 " set autoindent
 set mouse=""
@@ -93,36 +89,32 @@ vmap <leader>/ gc
 lua require('commands')
 command! EnableMouse set mouse=a
 command! DisableMouse set mouse=""
-if !exists('g:vscode')
-    " Runs the composer command/script 'sniff'. 'sniff' is a custom command that my composer projects normally have.
-    command! Sniff te composer sniff
-    command! Lint te composer lint
-    command! Clutter te composer clutter
-    command! Psalm te composer psalm
-    command! Base te composer update-baseline
-    command! Lrapid te composer lint-rapid
-    command! Lmerge te composer lint-merge
-    command! Lrelease te composer lint-release
-endif
+" Runs the composer command/script 'sniff'. 'sniff' is a custom command that my composer projects normally have.
+command! Sniff te composer sniff
+command! Lint te composer lint
+command! Clutter te composer clutter
+command! Psalm te composer psalm
+command! Base te composer update-baseline
+command! Lrapid te composer lint-rapid
+command! Lmerge te composer lint-merge
+command! Lrelease te composer lint-release
 command! -nargs=1 Psalmpress call DreamyPsalmpress(<f-args>)
-if !exists('g:vscode')
-    " alias commands. These change the current working directory. They are analogous to .aliases in the .alishrc file
-    command! Chome call DreamyChangeDirectory("$HOME")
-    command! Cpack call DreamyChangeDirectory("$HOME/.local/share/nvim/site/pack/packer/start")
-    if g:dreamy_developer
-        command! Chiv call DreamyChangeDirectory("$HOME/.local/share/nvim/site/pack/packer/start/vim-elhiv.git")
-    else
-        command! Chiv call DreamyChangeDirectory("$HOME/.local/share/nvim/site/pack/packer/start/vim-elhiv")
-    endif
-    command! Cvim call DreamyChangeDirectory("$HOME/.config/nvim")
-    command! Clua call DreamyChangeDirectory("$HOME/.config/nvim/lua")
-    if g:dreamy_developer
-        command! Csearch call DreamyChangeDirectory("$HOME/.local/share/nvim/site/pack/packer/start/vim-project-search.git")
-    else
-        command! Csearch call DreamyChangeDirectory("$HOME/.local/share/nvim/site/pack/packer/start/vim-project-search")
-    endif
-    command! Psy call DreamyPsysh()
+" alias commands. These change the current working directory. They are analogous to .aliases in the .alishrc file
+command! Chome call DreamyChangeDirectory("$HOME")
+command! Cpack call DreamyChangeDirectory("$HOME/.local/share/nvim/site/pack/packer/start")
+if g:dreamy_developer
+    command! Chiv call DreamyChangeDirectory("$HOME/.local/share/nvim/site/pack/packer/start/vim-elhiv.git")
+else
+    command! Chiv call DreamyChangeDirectory("$HOME/.local/share/nvim/site/pack/packer/start/vim-elhiv")
 endif
+command! Cvim call DreamyChangeDirectory("$HOME/.config/nvim")
+command! Clua call DreamyChangeDirectory("$HOME/.config/nvim/lua")
+if g:dreamy_developer
+    command! Csearch call DreamyChangeDirectory("$HOME/.local/share/nvim/site/pack/packer/start/vim-project-search.git")
+else
+    command! Csearch call DreamyChangeDirectory("$HOME/.local/share/nvim/site/pack/packer/start/vim-project-search")
+endif
+command! Psy call DreamyPsysh()
 " send contents of file to mysql
 command! Sendb :!mysql < %:p
 " make current window bottom window
@@ -145,11 +137,9 @@ command! Right normal <C-w>l
 command! NextWindow normal <C-w>w
 " beautify current file, making the assumption that it is JSON
 command! FormatAsJSON %!python -m json.tool
-if !exists('g:vscode')
-    " PHP test commands
-    command! PhpFile :call Run_php_tests_in_file(L_current_buffer().file().path)
-    command! Php :call Run_php_test_suite()
-endif
+" PHP test commands
+command! PhpFile :call Run_php_tests_in_file(L_current_buffer().file().path)
+command! Php :call Run_php_test_suite()
 
 command! Same call Match_previous_indentation_command()
 command! Less call Match_previous_indentation_command(-4) " assumes 4 spaces for indentation
@@ -336,11 +326,9 @@ augroup all_other_autocmd_group
     "but here is how you use regular completion if you really need it, but for some reason this breaks C-n C-p
     "navigation through list. You can use the mouse wheel though...
     autocmd FileType php                     inoremap <buffer> <leader><C-n> <C-n>
-    if !exists('g:vscode')
-        autocmd TermOpen *                       setlocal nocursorcolumn
-        autocmd TermOpen *                       tnoremap <buffer> <esc> <C-\><C-n>
-        autocmd FileType fzf                     tunmap <buffer> <esc>
-    endif
+    autocmd TermOpen *                       setlocal nocursorcolumn
+    autocmd TermOpen *                       tnoremap <buffer> <esc> <C-\><C-n>
+    autocmd FileType fzf                     tunmap <buffer> <esc>
 augroup END
 " -----------------------------------------------------
 " user functions: (to be called manually while editing)
@@ -926,10 +914,8 @@ function! DreamyGitCommit() abort
     startinsert
 endfunction
 
-if !exists('g:vscode')
-    " cannot call this function any sooner since it was not defined yet
-    call DreamyEnableMyPreferredLineNumberSettings()
-endif
+" cannot call this function any sooner since it was not defined yet
+call DreamyEnableMyPreferredLineNumberSettings()
 
 " this file should contain vimrc stuff that you do not want tracked by git. Vim will complain
 " if the file does not exist however the lack of its existence will not cause any problems.
