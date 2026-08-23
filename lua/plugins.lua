@@ -91,7 +91,11 @@ require('tokyonight').setup({
 })
 vim.cmd.colorscheme('tokyonight')
 
-require('nvim-tree').setup()
+require('nvim-tree').setup({
+    filters = {
+        git_ignored = false,
+    },
+})
 
 require('nvim-treesitter').install(treesitter_parsers)
 
