@@ -18,17 +18,14 @@ local plugins = {
     -- vim-UT depends on lh-vim-lib.
     'https://github.com/LucHermitte/lh-vim-lib',
     'https://github.com/LucHermitte/vim-UT',
+    'https://github.com/nvim-tree/nvim-web-devicons', -- optional file icons for nvim-tree
+    'https://github.com/nvim-tree/nvim-tree.lua',
     {
         src = vim_elhiv_src,
         version = 'develop',
     },
 --[[
     if not vim.g.vscode then
-        use {
-            'nvim-tree/nvim-tree.lua',
-            requires = 'nvim-tree/nvim-web-devicons', -- optional, for file icons
-            tag = 'nightly', -- nightly = stable...
-        }
         use {
             'ibhagwan/fzf-lua',
             requires = 'nvim-tree/nvim-web-devicons',
@@ -65,3 +62,5 @@ local plugins = {
 }
 
 vim.pack.add(plugins)
+
+require('nvim-tree').setup()
