@@ -63,6 +63,7 @@ local plugins = {
     'https://github.com/LucHermitte/vim-UT',
     'https://github.com/nvim-tree/nvim-web-devicons', -- optional file icons for nvim-tree and fzf-lua
     'https://github.com/nvim-tree/nvim-tree.lua',
+    -- Requires fzf > 0.36 or the skim (sk) binary; rg, fd, and bat are optional enhancements.
     'https://github.com/ibhagwan/fzf-lua',
     {
         src = 'https://github.com/nvim-treesitter/nvim-treesitter',
