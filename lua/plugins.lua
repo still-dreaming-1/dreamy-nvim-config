@@ -14,13 +14,13 @@ local plugins = {
     'https://github.com/tpope/vim-commentary',
     'https://github.com/neomake/neomake',
     'https://github.com/tpope/vim-fugitive',
+    'https://github.com/jreybert/vimagit',
     {
         src = vim_elhiv_src,
         version = 'develop',
     },
 --[[
     if not vim.g.vscode then
-        use 'jreybert/vimagit'
         use {
             'LucHermitte/vim-UT', -- unit testing
             requires = 'LucHermitte/lh-vim-lib'
