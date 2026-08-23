@@ -6,3 +6,6 @@ plugin/
 .init.vim-rplugin~
 debug.init.vim
 lua/beforeInit.lua
+
+# Neovim's fallback log when its normal state directory is unavailable
+nvim.log
