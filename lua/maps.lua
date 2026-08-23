@@ -134,10 +134,10 @@ vim.keymap.set(
     '<leader><leader>t',
     ':call PsalmTraceVarUnderCursor()<CR>'
 )
-vim.keymap.set( -- toggle nvim-tree
+vim.keymap.set( -- open/focus nvim-tree and find the current file
     'n',
     '<leader>t',
-    '<Cmd>NvimTreeFindFileToggle<CR>'
+    '<Cmd>NvimTreeFindFile<CR>'
 )
 vim.keymap.set( -- quit
     'n',
