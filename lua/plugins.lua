@@ -15,16 +15,15 @@ local plugins = {
     'https://github.com/neomake/neomake',
     'https://github.com/tpope/vim-fugitive',
     'https://github.com/jreybert/vimagit',
+    -- vim-UT depends on lh-vim-lib.
+    'https://github.com/LucHermitte/lh-vim-lib',
+    'https://github.com/LucHermitte/vim-UT',
     {
         src = vim_elhiv_src,
         version = 'develop',
     },
 --[[
     if not vim.g.vscode then
-        use {
-            'LucHermitte/vim-UT', -- unit testing
-            requires = 'LucHermitte/lh-vim-lib'
-        }
         use {
             'nvim-tree/nvim-tree.lua',
             requires = 'nvim-tree/nvim-web-devicons', -- optional, for file icons
