@@ -1,9 +1,12 @@
 local vim_elhiv_src
+local vim_project_search_src
 
 if vim.g.dreamy_developer then
     vim_elhiv_src = 'git@github.com:still-dreaming-1/vim-elhiv.git'
+    vim_project_search_src = 'git@github.com:still-dreaming-1/vim-project-search.git'
 else
     vim_elhiv_src = 'https://github.com/still-dreaming-1/vim-elhiv.git'
+    vim_project_search_src = 'https://github.com/still-dreaming-1/vim-project-search.git'
 end
 
 local treesitter_parsers = {
@@ -69,31 +72,15 @@ local plugins = {
     --     src = 'https://github.com/folke/tokyonight.nvim',
     --     version = vim.version.range('^4'),
     -- },
+    -- vim-project-search depends on vim-elhiv, so keep these in this order.
     {
         src = vim_elhiv_src,
         version = 'develop',
     },
---[[
-    if vim.g.dreamy_developer then
-        use {
-            'git@github.com:still-dreaming-1/vim-project-search.git',
-            branch = 'develop',
-            requires = {{
-                'git@github.com:still-dreaming-1/vim-elhiv.git',
-                branch = 'develop',
-            }}
-        }
-    else
-        use {
-            'still-dreaming-1/vim-project-search',
-            branch = 'develop',
-            requires = {{
-                'still-dreaming-1/vim-elhiv',
-                branch = 'develop',
-            }}
-        }
-    end
-]]
+    {
+        src = vim_project_search_src,
+        version = 'develop',
+    },
 }
 
 vim.pack.add(plugins)
