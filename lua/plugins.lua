@@ -27,8 +27,6 @@ local treesitter_parsers = {
     'zsh',
 }
 
--- nvim-treesitter's main branch requires tree-sitter-cli 0.26.1 or newer
--- to be installed separately before parsers can be installed.
 local treesitter_group = vim.api.nvim_create_augroup('dreamy_treesitter', {
     clear = true,
 })
@@ -61,11 +59,12 @@ local plugins = {
     -- vim-UT depends on lh-vim-lib.
     'https://github.com/LucHermitte/lh-vim-lib',
     'https://github.com/LucHermitte/vim-UT',
-    -- Requires a Nerd Font 3.3 or newer in the terminal to display icons correctly.
+    -- Requires a Nerd Fontto display icons correctly
     'https://github.com/nvim-tree/nvim-web-devicons', -- optional file icons for nvim-tree and fzf-lua
     'https://github.com/nvim-tree/nvim-tree.lua',
-    -- Requires fzf > 0.36 or the skim (sk) binary; rg, fd, and bat are optional enhancements.
+    -- Requires fzf
     'https://github.com/ibhagwan/fzf-lua',
+    -- Requires tree-sitter-cli 0.26.1 or newer to install parsers.
     {
         src = 'https://github.com/nvim-treesitter/nvim-treesitter',
         version = 'main',
