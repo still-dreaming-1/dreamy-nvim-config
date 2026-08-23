@@ -12,7 +12,6 @@ local plugins = {
     'https://github.com/qpkorr/vim-bufkill',
     'https://github.com/tpope/vim-repeat',
     'https://github.com/tpope/vim-commentary',
-    'https://github.com/neomake/neomake',
     'https://github.com/tpope/vim-fugitive',
     'https://github.com/jreybert/vimagit',
     -- vim-UT depends on lh-vim-lib.
