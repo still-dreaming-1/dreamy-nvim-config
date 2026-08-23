@@ -95,7 +95,7 @@ else
     vim.keymap.set(
         'n',
         '<leader>gd',
-        '<Cmd>Gdiff<CR>'
+        '<Cmd>Gdiffsplit<CR>'
     )
     vim.keymap.set(
         'n',
@@ -110,7 +110,7 @@ else
     vim.keymap.set(
         'n',
         '<leader>gl',
-        '<Cmd>Git! log' --decorate --stat --graph<CR>
+        '<Cmd>Git! log --decorate --stat --graph<CR>'
     )
     vim.keymap.set( -- vimagit
         'n',

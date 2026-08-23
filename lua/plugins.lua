@@ -13,13 +13,13 @@ local plugins = {
     'https://github.com/tpope/vim-repeat',
     'https://github.com/tpope/vim-commentary',
     'https://github.com/neomake/neomake',
+    'https://github.com/tpope/vim-fugitive',
     {
         src = vim_elhiv_src,
         version = 'develop',
     },
 --[[
     if not vim.g.vscode then
-        use 'tpope/vim-fugitive'
         use 'jreybert/vimagit'
         use {
             'LucHermitte/vim-UT', -- unit testing
