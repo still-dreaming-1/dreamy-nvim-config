@@ -101,19 +101,11 @@ command! Lrelease te composer lint-release
 command! -nargs=1 Psalmpress call DreamyPsalmpress(<f-args>)
 " alias commands. These change the current working directory. They are analogous to .aliases in the .alishrc file
 command! Chome call DreamyChangeDirectory("$HOME")
-command! Cpack call DreamyChangeDirectory("$HOME/.local/share/nvim/site/pack/packer/start")
-if g:dreamy_developer
-    command! Chiv call DreamyChangeDirectory("$HOME/.local/share/nvim/site/pack/packer/start/vim-elhiv.git")
-else
-    command! Chiv call DreamyChangeDirectory("$HOME/.local/share/nvim/site/pack/packer/start/vim-elhiv")
-endif
+command! Cpack call DreamyChangeDirectory("$HOME/.local/share/nvim/site/pack/core/opt")
+command! Chiv call DreamyChangeDirectory("$HOME/.local/share/nvim/site/pack/core/opt/vim-elhiv")
 command! Cvim call DreamyChangeDirectory("$HOME/.config/nvim")
 command! Clua call DreamyChangeDirectory("$HOME/.config/nvim/lua")
-if g:dreamy_developer
-    command! Csearch call DreamyChangeDirectory("$HOME/.local/share/nvim/site/pack/packer/start/vim-project-search.git")
-else
-    command! Csearch call DreamyChangeDirectory("$HOME/.local/share/nvim/site/pack/packer/start/vim-project-search")
-endif
+command! Csearch call DreamyChangeDirectory("$HOME/.local/share/nvim/site/pack/core/opt/vim-project-search")
 command! Psy call DreamyPsysh()
 " send contents of file to mysql
 command! Sendb :!mysql < %:p
