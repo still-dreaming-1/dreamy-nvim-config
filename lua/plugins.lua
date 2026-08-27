@@ -92,6 +92,7 @@ require('tokyonight').setup({
 vim.cmd.colorscheme('tokyonight')
 
 require('nvim-tree').setup({
+    sync_root_with_cwd = true,
     filters = {
         git_ignored = false,
     },
