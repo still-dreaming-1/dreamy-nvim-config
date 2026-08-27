@@ -92,6 +92,19 @@ require('tokyonight').setup({
 vim.cmd.colorscheme('tokyonight')
 
 require('nvim-tree').setup({
+    on_attach = function(bufnr)
+        local api = require('nvim-tree.api')
+        api.map.on_attach.default(bufnr)
+        vim.keymap.set(
+            'n',
+            '<leader>c',
+            api.tree.change_root_to_node,
+            {
+                buffer = bufnr,
+                desc = 'nvim-tree: CD',
+            }
+        )
+    end,
     sync_root_with_cwd = true,
     filters = {
         git_ignored = false,
