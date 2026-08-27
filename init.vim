@@ -66,7 +66,6 @@ hi! TermCursor ctermfg=15 ctermbg=14
 hi! TermCursorNC ctermfg=15 ctermbg=14
 " copy the indentation from the previous line (supposedly, but does not always work).
 " set autoindent
-set mouse=""
 set timeoutlen=18000
 set path+=**
 set scrollback=-1

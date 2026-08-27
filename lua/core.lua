@@ -5,6 +5,8 @@ vim.g.loaded_netrwPlugin = 1
 vim.g.mapleader = ' '
 -- use backslash for localleader
 vim.g.maplocalleader = [[\]]
+vim.o.mouse = 'a'
+require('kittyMouse').setup()
 -- make searching easier
 vim.o.ignorecase = true
 vim.o.smartcase = true
