@@ -58,7 +58,8 @@ vim.keymap.set(
     '<leader><esc>',
     '<esc>'
 )
--- pasting in visual mode will yank what you just pasted so it does overwritten by what was pasted over(breaks specifying register, but I don't use them)
+-- pasting in visual mode will yank what you just pasted so it doesn't get overwritten by what was pasted over (breaks specifying register,
+-- but I don't use them)
 vim.keymap.set(
     'x',
     'p',
