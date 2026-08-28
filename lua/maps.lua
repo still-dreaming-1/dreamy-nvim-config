@@ -58,12 +58,12 @@ vim.keymap.set(
     '<leader><esc>',
     '<esc>'
 )
--- pasting in visual mode will yank what you just pasted so it doesn't get overwritten by what was pasted over (breaks specifying register,
--- but I don't use them)
+-- P (capital P) is special in Visual mode: unlike normal-mode P, it replaces the selection without saving the replaced text to a register.
 vim.keymap.set(
     'x',
     'p',
-    'pgvygv<esc>'
+    'P',
+    { desc = 'Put without overwriting registers' }
 )
 -- use to unhighlight/unsearch the last search term. You can hit n to re-search/highlight the search term
 vim.keymap.set(
