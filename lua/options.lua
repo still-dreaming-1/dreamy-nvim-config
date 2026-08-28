@@ -1,4 +1,6 @@
 vim.o.swapfile = false
+-- Make yanks, deletes/changes, and puts use the system clipboard by default.
+vim.o.clipboard = 'unnamedplus'
 -- directory specific extra nvim config files
 vim.o.exrc = true
 -- more secure exrc (see above) mode
