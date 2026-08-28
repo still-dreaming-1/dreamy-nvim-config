@@ -98,13 +98,6 @@ command! Lrapid te composer lint-rapid
 command! Lmerge te composer lint-merge
 command! Lrelease te composer lint-release
 command! -nargs=1 Psalmpress call DreamyPsalmpress(<f-args>)
-" alias commands. These change the current working directory. They are analogous to .aliases in the .alishrc file
-command! Chome call DreamyChangeDirectory("$HOME")
-command! Cpack call DreamyChangeDirectory("$HOME/.local/share/nvim/site/pack/core/opt")
-command! Chiv call DreamyChangeDirectory("$HOME/.local/share/nvim/site/pack/core/opt/vim-elhiv")
-command! Cvim call DreamyChangeDirectory("$HOME/.config/nvim")
-command! Clua call DreamyChangeDirectory("$HOME/.config/nvim/lua")
-command! Csearch call DreamyChangeDirectory("$HOME/.local/share/nvim/site/pack/core/opt/vim-project-search")
 command! Psy call DreamyPsysh()
 " send contents of file to mysql
 command! Sendb :!mysql < %:p
@@ -560,10 +553,6 @@ function! JumpToNextJSFunction()
     let search_string = L_s('= function(').get_no_magic().str
     call search(search_string)
     let @/ = search_string
-endfunction
-
-function! DreamyChangeDirectory(dir_path)
-    execute 'cd ' . fnameescape(a:dir_path)
 endfunction
 
 " dump the current variable. Works whether or not the cursor pointed at the dollar sign. Does not affect search history. Can dump either an object or a property
