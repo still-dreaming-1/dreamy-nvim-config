@@ -140,6 +140,14 @@ vim.keymap.set( -- open/focus nvim-tree and find the current file
     '<leader>t',
     '<Cmd>NvimTreeFindFile<CR>'
 )
+vim.keymap.set( -- fuzzy find a file
+    'n',
+    '<leader>f',
+    function()
+        require('fzf-lua').files()
+    end,
+    { desc = 'fzf-lua: Find files' }
+)
 vim.keymap.set( -- quit
     'n',
     '<leader>q',
